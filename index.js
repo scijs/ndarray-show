@@ -1,9 +1,14 @@
 var showf = require('fixed-width-float');
+var ndarray = require('ndarray');
 
 module.exports = function (m, opts) {
     if (!opts) opts = {};
     if (typeof opts === 'number') opts = { width: opts };
     if (!opts.width) opts.width = 8;
+    
+    if (m.dimension === undefined) {
+        m = ndarray(m);
+    }
     
     if (m.dimension === 1) return d1(m, opts);
     if (m.dimension === 2) return d2(m, opts);
