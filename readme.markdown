@@ -145,6 +145,9 @@ var show = require('ndarray-show')
 
 Return a string representation `s` of the ndarray `m`.
 
+If you pass in a non-ndarray array-like structure for `m`, it will be converted
+into a 1-dimensional ndarray.
+
 Optionally specify the
 [fixed-width float](https://npmjs.org/package/fixed-width-float)
 size in bytes.
