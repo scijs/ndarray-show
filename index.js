@@ -20,11 +20,7 @@ function d1 (m, opts) {
 function d2 (m, opts) {
     var rows = [];
     for (var y = 0; y < m.shape[1]; y++) {
-        var row = [];
-        for (var x = 0; x < m.shape[0]; x++) {
-            row.push(showf(m.get(x, y), opts.width));
-        }
-        rows.push(row.join(' '));
+        rows.push(d1(m.pick(null, y), opts));
     }
     return rows.join('\n');
 }
@@ -32,7 +28,7 @@ function d2 (m, opts) {
 function d3 (m, opts) {
     var rows = [];
     for (var z = 0; z < m.shape[2]; z++) {
-        rows.push(d2(m.pick(z), opts), '');
+        rows.push(d2(m.pick(null, null, z), opts), '');
     }
     return rows.join('\n');
 }
