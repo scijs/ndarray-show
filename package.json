@@ -4,13 +4,14 @@
   "description": "display an ndarray",
   "main": "index.js",
   "dependencies": {
-    "fixed-width-float": "~1.0.0"
+    "fixed-width-float": "^1.0.0"
   },
   "devDependencies": {
-    "tape": "~2.12.1",
-    "ndarray": "~1.0.14",
-    "ndarray-fill": "~1.0.1",
-    "zeros": "~0.0.0"
+    "tape": "^2.12.1",
+    "ndarray": "^1.0.14",
+    "ndarray-fill": "^1.0.1",
+    "zeros": "~0.0.0",
+    "brfs": "^1.1.1"
   },
   "scripts": {
     "test": "tape test/*.js"
@@ -31,5 +32,23 @@
     "email": "mail@substack.net",
     "url": "http://substack.net"
   },
-  "license": "MIT"
+  "license": "MIT",
+  "testling": {
+    "files": "test/*.js",
+    "browsers": [
+      "ie/8..latest",
+      "firefox/15",
+      "firefox/latest",
+      "firefox/nightly",
+      "chrome/15",
+      "chrome/latest",
+      "chrome/canary",
+      "opera/12..latest",
+      "opera/next",
+      "safari/5.1..latest",
+      "ipad/6.0..latest",
+      "iphone/6.0..latest",
+      "android-browser/4.2..latest"
+    ]
+  }
 }

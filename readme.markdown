@@ -2,6 +2,10 @@
 
 display an ndarray
 
+[![testling badge](https://ci.testling.com/substack/ndarray-show.png)](https://ci.testling.com/substack/ndarray-show)
+
+[![build status](https://secure.travis-ci.org/substack/ndarray-show.png)](http://travis-ci.org/substack/ndarray-show)
+
 # example
 
 ## 1d
