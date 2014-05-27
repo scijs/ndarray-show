@@ -2,6 +2,7 @@ var showf = require('fixed-width-float');
 
 module.exports = function (m, opts) {
     if (!opts) opts = {};
+    if (typeof opts === 'number') opts = { width: opts };
     if (!opts.width) opts.width = 8;
     
     if (m.dimension === 1) return d1(m, opts);
