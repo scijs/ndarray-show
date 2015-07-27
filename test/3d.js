@@ -1,6 +1,7 @@
 var zeros = require('zeros');
 var fill = require('ndarray-fill');
 var show = require('../');
+var pool = require('ndarray-scratch')
 
 var m = zeros([ 3, 3, 3 ]);
 fill(m, function (x, y, z) {
@@ -11,9 +12,18 @@ fill(m, function (x, y, z) {
 
 var fs =  require('fs');
 var expected = fs.readFileSync(__dirname + '/3d/expected.txt', 'utf8');
+var serial = fs.readFileSync(__dirname + '/3d/serial.txt', 'utf8');
 
 var test = require('tape');
 test('3d', function (t) {
-    t.equal(show(m) + '\n', expected);
-    t.end();
+  t.equal(show(m) + '\n', expected);
+  t.end();
+});
+
+test('3d serial', function (t) {
+  var A = pool.zeros([3,4,5])
+  fill(A, function(i,j,k) { return i + j*A.shape[0] + k*A.shape[0]*A.shape[1]})
+
+  t.equal(show(A), serial);
+  t.end();
 });
