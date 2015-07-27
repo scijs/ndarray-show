@@ -1,6 +1,6 @@
 {
   "name": "ndarray-show",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "display an ndarray",
   "main": "index.js",
   "dependencies": {
